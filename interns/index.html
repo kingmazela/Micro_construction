@@ -6,7 +6,9 @@
 	<meta name="" content="">
 	<title>Micro Construction</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/fontawesome.min.css" integrity="sha384-z4tVnCr80ZcL0iufVdGQSUzNvJsKjEtqYZjiQrrYKlpGow+btDHDfQWkFjoaz/Zr" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/slideshow.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/fontawesome.min.css" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
@@ -16,28 +18,75 @@
 			<div id="logo">
 				<a href="">Micro Construction</a>
 			</div>
-			<button class="hamburger-btn" onclick="buttonToggle()">
-				<!-- <i class="fa-solid fa-bars"></i> -->
-				Nav
-			</button>
-			<ul class="hamburger">
+			
+			<div class="hamburger">
 				
-			</ul>
+				 <button class="navbar_link navbar_link-toggle">
+				   <i class="fa fa-bars"></i>
+				 </button>
+			   <nav class="navbar_items">
+				 <div class="navbar_link">
+					<li><a href="#">Home</a></li>
+				 </div>
+				 <div class="navbar_link">
+					<li><a href="#">About</a></li>
+				 </div>
+				 <div class="navbar_link">
+					<li><a href="#">Servo</a></li>
+				  </div>
+			   </nav>
+			   
+			 </div>
+			
 		</nav>
+
+
+
 		<section>
 			<div class="hero">
-				<img src="img/banner.jpg" alt="Banner">
-				<h1 class="headline">micro construnction</h1>
+				<div class="slideshow-container">
+
+					<div class="mySlides fade">
+					  <img src="img/banner.jpg" style="width:100%; height: 50vh;">
+					  <div class="text">Micro Construction</div>
+					</div>
+					
+					<div class="mySlides fade">
+					  <img src="img/2.jpg" style="width:100%; height: 50vh;">
+					  <div class="text">We make life easier</div>
+					</div>
+					
+					<div class="mySlides fade">
+					  <img src="img/3.jpg" style="width:100%; height: 50vh;">
+					  <div class="text">Real easy</div>
+					</div>
+					
+					<a class="prev" onclick="plusSlides(-1)">❮</a>
+					<a class="next" onclick="plusSlides(1)">❯</a>
+					
+					</div>
+					<br>
+					
+					<div style="text-align:center">
+					  <span class="dot" onclick="currentSlide(1)"></span> 
+					  <span class="dot" onclick="currentSlide(2)"></span> 
+					  <span class="dot" onclick="currentSlide(3)"></span> 
+					</div>
+					
+			
 			</div>
 		</section>
 	</header>
+	
+	
+	
+	
 	<div class="slider"></div>
 
 
 
 
-
-
+	
 
 	<section id="about">
 		<div class="container">
@@ -66,9 +115,43 @@
 
 
 
+	
+<script>
+    let slideIndex = 0;
+    showSlides();
+    
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}    
+      
+	 
+	 
+	  for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+      setTimeout(showSlides, 4000); // Change image every 4 seconds
+    }
+</script>
 
+	<script>
+		function classToggle() {
+		const navs = document.querySelectorAll('.navbar_items')
+		
+		navs.forEach(nav => nav.classList.toggle('navbar_ToggleShow'));
+		}
 
-
+		document.querySelector('.navbar_link-toggle')
+		.addEventListener('click', classToggle);
+	</script>
 	<script src="js/app.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </body>
 </html>
