@@ -7,6 +7,9 @@
 body{
 	background-color: #f1f1f1;
 }
+.nav-links{
+	display: none;
+}
 .slider{
 	position: absolute;
 	top: 0;
@@ -14,7 +17,7 @@ body{
 	width: 100%;
 	height: 100vh;
 	/* background: linear-gradient(to left, #ba7453, #d1a984); */
-	background: 	rgba(128,0,0, 1);
+	background: linear-gradient(to right, maroon, red);
 	z-index: -1;
 }
 nav{
@@ -24,16 +27,36 @@ nav{
 	min-height: 10vh;
 	background-color: black;
 }
+
+.navbar_items,
+	.hamburger {
+	  flex-direction: column;
+	}
+	  
+  .navbar_items {
+	  display:none;
+	}
+	  
+  .navbar_items--right {
+	  margin-left:0;
+	}
+	  
+  .navbar_ToggleShow {
+	  display: flex;
+	}
+	  
+  .navbar_link-toggle {
+	  align-self: flex-end;
+	  display: initial;
+	  position: absolute;
+	  cursor: pointer;
+	 } 
 .hero{
 	height: 60%;
 	width: 100%;
 	position: relative;
 }
-.hero img{
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-}
+
 #logo{
 	grid-column: 2/3;
 	margin-top: 25px;
@@ -71,7 +94,6 @@ section{
 }
 .hero::after{
 	content: "";
-	background: black;
 	width: 100%;
 	height: 100%;
 	position: absolute;
@@ -95,17 +117,11 @@ section{
 .hamburger-btn:hover{
 	opacity: 0.5;
 }
-.hamburger a{
-	/* display: none; */
-}
+
 .hamburger li{
 	list-style: none;
 
 }
-/* .hamburger button{
-	width: 100px;
-	background-color: antiquewhite;
-} */
 
 /* 
 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -113,8 +129,9 @@ section{
 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 */
 #about{
-	/* width: 100%; */
-	margin: 0px 20px;
+	width: 100%;
+	margin: 70px 0px;
+	background-color: #f1f1f1
 }
 .body-header{
 	width: 80%;
@@ -146,5 +163,4 @@ section{
 	justify-content: center;
 	align-items: center;
 }
-
 
