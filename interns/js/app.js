@@ -1,12 +1,8 @@
-function buttonToggle(){
-    var tog = document.getElementById("hamburger");
-    if (tog.innerHTML == "s"){
-        tog.innerHTML = '<div><li><a href="">Home</a></li><li><a href="">About</a></li><li><a href="">Services</a></li><li><a href="">portfolio</a></li><li><a href="">Contact</a></li></div>';
-    }else{
-        tog.innerHTML = "";
+function classToggle() {
+    const navs = document.querySelectorAll('.navbar_items')
+    
+    navs.forEach(nav => nav.classList.toggle('navbar_ToggleShow'));
     }
 
-}
-
-
-
+    document.querySelector('.navbar_link-toggle')
+    .addEventListener('click', classToggle);
